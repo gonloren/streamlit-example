@@ -27,7 +27,7 @@ if select =="Seleccionar Meta":
 else:
     filtered_df = df[df['Regional indicator']==select]
 #Ladder Score Slider
-score = st.sidebar.slider('Select Year', min_value=2022, max_value=2030, value = 8) # Getting the input.
+score = st.sidebar.slider('Select Year', min_value=2022, max_value=2030, value = 2022) # Getting the input.
 df = df[df['Ladder score'] <= score] # Filtering the dataframe.
 
 with st.echo(code_location='below'):
