@@ -19,6 +19,17 @@ st.title("hello")
 st.sidebar.title("World Happiness Index 2021:")
 st.image("https://images.pexels.com/photos/573259/pexels-photo-573259.jpeg?cs=srgb&dl=pexels-matheus-bertelli-573259.jpg&fm=jpg", caption="World Happiness Dataset")
 
+#Meta Select Filter
+country_list = ["Seleccionar Meta","Valor Cliente", "Eficiencia"]
+select = st.sidebar.selectbox('Filter the region here:', country_list, key='1')
+if select =="Seleccionar Meta":
+filtered_df = df
+else:
+filtered_df = df[df['Regional indicator']==select]
+#Ladder Score Slider
+score = st.sidebar.slider('Select Year', min_value=2022, max_value=2030, value = 8) # Getting the input.
+df = df[df['Ladder score'] <= score] # Filtering the dataframe.
+
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
     num_turns = st.slider("Number of turns in spiral", 1, 100, 9)
