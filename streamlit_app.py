@@ -15,8 +15,8 @@ forums](https://discuss.streamlit.io).
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
 
-st.title("hello")
-st.sidebar.title("World Happiness Index 2021:")
+#st.title("hello")
+st.sidebar.title("Select Meta and Year:")
 st.image("https://images.pexels.com/photos/573259/pexels-photo-573259.jpeg?cs=srgb&dl=pexels-matheus-bertelli-573259.jpg&fm=jpg", caption="World Happiness Dataset")
 
 #Meta Select Filter
