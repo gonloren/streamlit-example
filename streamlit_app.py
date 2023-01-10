@@ -21,9 +21,9 @@ st.image("https://images.pexels.com/photos/573259/pexels-photo-573259.jpeg?cs=sr
 
 #Meta Select Filter
 country_list = ["Seleccionar Meta","Valor Cliente", "Eficiencia"]
-select = st.sidebar.selectbox('Filter the region here:', country_list, key='1')
+select = st.sidebar.selectbox('Filter Meta here:', country_list, key='1')
 if select =="Seleccionar Meta":
-    filtered_df = df
+    filtered_df = ""
 else:
     filtered_df = df[df['Regional indicator']==select]
 #Ladder Score Slider
