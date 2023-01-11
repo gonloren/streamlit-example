@@ -24,7 +24,7 @@ if uploaded_file is not None:
   st.write(df)
   #Year Slider
   score = st.sidebar.slider('Select Year', min_value=2022, max_value=2030, value = 2022) # Getting the input.
-  df[df['Year'] <= score] # Filtering the dataframe. 
+  df[df['Year'] == score] # Filtering the dataframe. 
     
     
 #Meta Select Filter
