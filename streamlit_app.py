@@ -37,7 +37,7 @@ if uploaded_file is not None:
   year = df["Year"].loc[df["Proyecto"] == select]
   year_choice = st.sidebar.selectbox('', years)
   #df['Year'] == score # Filtering the dataframe.
-  year['Year'] == year_choice
+  df['Year'] == year_choice
   
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
