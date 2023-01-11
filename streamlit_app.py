@@ -34,10 +34,10 @@ if uploaded_file is not None:
   proyects = df['Proyecto'].unique()
   years = df['Year'].unique()
   select = st.selectbox('Proyect', proyects)
-  year = df["Year"].loc[df["Proyecto"] == select]
+  year = df["Year"].loc[df["Proyecto"] == select].unique()
   year_choice = st.sidebar.selectbox('', year)
   #df['Year'] == score # Filtering the dataframe.
-  df['Year'] == year_choice
+  st.write(df)#df['Year'] == year_choice
   
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
