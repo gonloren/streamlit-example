@@ -28,16 +28,15 @@ if uploaded_file is not None:
   country_list = ["Seleccionar Proyecto","Boxboard", "Maderas", "Boxia"]
   select = st.sidebar.selectbox('Filter Meta here:', country_list, key='1')  
   df[df['Pryecto']==select]
-else: ""
+#else: ""
   
-    
-'''#Meta Select Filter
+"""#Meta Select Filter
 country_list = ["Seleccionar Proyecto","Boxboard", "Maderas", "Boxia"]
 select = st.sidebar.selectbox('Filter Meta here:', country_list, key='1')
 if select == "Seleccionar Proyecto":
     filtered_df = ""
 else:
-    filtered_df = df[df['Pryecto']==select]'''
+    filtered_df = df[df['Pryecto']==select]"""
 
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
