@@ -20,12 +20,12 @@ if uploaded_file is not None:
   #select = st.sidebar.selectbox('Filter Proyect here:', proyect_list, key='1') 
   proyects = df['Proyecto'].unique()
   #st.write(type(proyects))
-  df1 = pd.DataFrame({0: ["Todos"]}, index=['3'])
+  #df1 = pd.DataFrame({0: ["Todos"]}, index=['3'])
   #st.write(type(df1))
-  lista = ['Todos']
-  proyects.insert('3','Todos')
+  proyectss = proyects.tolist()
+  proyectss.append('Todos')
   years = df['Year'].unique()
-  select = st.sidebar.selectbox('Proyect', proyects)
+  select = st.sidebar.selectbox('Proyect', proyectss)
   year = df["Year"].loc[df["Proyecto"] == select].unique()
   year_choice = st.sidebar.selectbox('Year', year)
   #df['Year'] == score # Filtering the dataframe.
