@@ -21,8 +21,6 @@ st.image("https://images.pexels.com/photos/573259/pexels-photo-573259.jpeg?cs=sr
 uploaded_file = st.file_uploader("Seleccionar archivo")
 #proyect_list = ["Seleccionar Proyecto","Boxboard", "Maderas", "Boxia"]
 
- 
-
 if uploaded_file is not None:
   df = pd.read_csv(uploaded_file)
   #st.write(df)
@@ -33,11 +31,11 @@ if uploaded_file is not None:
   #select = st.sidebar.selectbox('Filter Proyect here:', proyect_list, key='1') 
   proyects = df['Proyecto'].unique()
   years = df['Year'].unique()
-  select = st.selectbox('Proyect', proyects)
+  select = st.sidebar.selectbox('Proyect', proyects)
   year = df["Year"].loc[df["Proyecto"] == select].unique()
   year_choice = st.sidebar.selectbox('', year)
   #df['Year'] == score # Filtering the dataframe.
-  st.write(df)#df['Year'] == year_choice
+  st.write(year)#df['Year'] == year_choice
   
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
