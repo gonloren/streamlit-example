@@ -18,7 +18,11 @@ In the meantime, below is an example of what you can do with just a few lines of
 #st.title("hello")
 st.sidebar.title("Select Meta and Year:")
 st.image("https://images.pexels.com/photos/573259/pexels-photo-573259.jpeg?cs=srgb&dl=pexels-matheus-bertelli-573259.jpg&fm=jpg", caption="World Happiness Dataset")
-
+uploaded_file = st.fileuploader('Seleccionar archivo')
+if uploaded_file is not None:
+  df = pd.read_csv(uploaded_file)
+  st.write(df)
+                                 
 #Meta Select Filter
 country_list = ["Seleccionar Meta","Valor Cliente", "Eficiencia"]
 select = st.sidebar.selectbox('Filter Meta here:', country_list, key='1')
