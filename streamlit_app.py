@@ -16,7 +16,7 @@ In the meantime, below is an example of what you can do with just a few lines of
 """
 
 #st.title("hello")
-st.sidebar.title("Select Meta and Year:")
+#st.sidebar.title("Select Meta and Year:")
 st.image("https://images.pexels.com/photos/573259/pexels-photo-573259.jpeg?cs=srgb&dl=pexels-matheus-bertelli-573259.jpg&fm=jpg", caption="World Happiness Dataset")
 uploaded_file = st.file_uploader("Seleccionar archivo")
 #proyect_list = ["Seleccionar Proyecto","Boxboard", "Maderas", "Boxia"]
