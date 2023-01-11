@@ -22,17 +22,18 @@ uploaded_file = st.file_uploader("Seleccionar archivo")
 if uploaded_file is not None:
   df = pd.read_csv(uploaded_file)
   st.write(df)
+
+#Year Slider
+score = st.sidebar.slider('Select Year', min_value=2022, max_value=2030, value = 2022) # Getting the input.
+df = df[df['Year'] <= score] # Filtering the dataframe.
                                  
 #Meta Select Filter
-country_list = ["Seleccionar Meta","Valor Cliente", "Eficiencia"]
+country_list = ["Seleccionar Proyecto","Boxboard", "Maderas", "Boxia"]
 select = st.sidebar.selectbox('Filter Meta here:', country_list, key='1')
-if select =="Seleccionar Meta":
+if select == "Seleccionar Proyecto":
     filtered_df = ""
 else:
-    filtered_df = df[df['Regional indicator']==select]
-#Ladder Score Slider
-score = st.sidebar.slider('Select Year', min_value=2022, max_value=2030, value = 2022) # Getting the input.
-df = df[df['Ladder score'] <= score] # Filtering the dataframe.
+    filtered_df = df[df['Pryecto']==select]
 
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
