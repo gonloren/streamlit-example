@@ -31,7 +31,7 @@ if uploaded_file is not None:
   #select = st.sidebar.selectbox('Filter Proyect here:', proyect_list, key='1') 
   proyects = df['Proyecto'].unique()
   select = st.selectbox('Proyect', proyects)
-  df.loc[df[df['Proyecto'] == select] & df[df['Year'] == score]] # Filtering the dataframe.
+  df.loc[(df[df['Proyecto'] == select]) & (df[df['Year'] == score])] # Filtering the dataframe.
 
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
