@@ -19,12 +19,14 @@ if uploaded_file is not None:
   
   #select = st.sidebar.selectbox('Filter Proyect here:', proyect_list, key='1') 
   proyects = df['Proyecto'].unique()
+  proyects [3] = "Todos"
   years = df['Year'].unique()
   select = st.sidebar.selectbox('Proyect', proyects)
   year = df["Year"].loc[df["Proyecto"] == select].unique()
   year_choice = st.sidebar.selectbox('Year', year)
   #df['Year'] == score # Filtering the dataframe.
-  df.loc[(df['Proyecto']==select) & (df['Year']==year_choice)]
+  if select == "Todos" : df.loc[(df['Year']==year_choice)]
+  else : df.loc[(df['Proyecto']==select) & (df['Year']==year_choice)]
   
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
