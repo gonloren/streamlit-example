@@ -22,7 +22,7 @@ if uploaded_file is not None:
   #st.write(type(proyects))
   df1 = pd.DataFrame({0: ["Todos"]}, index=['3'])
   #st.write(type(df1))
-  lista = ["Todos"]
+  lista = ['Todos']
   proyects.extend(lista)
   years = df['Year'].unique()
   select = st.sidebar.selectbox('Proyect', proyects)
