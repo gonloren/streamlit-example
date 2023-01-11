@@ -22,13 +22,10 @@ uploaded_file = st.file_uploader("Seleccionar archivo")
 if uploaded_file is not None:
   df = pd.read_csv(uploaded_file)
   st.write(df)
-
-#Year Slider
-score = st.sidebar.slider('Select Year', min_value=2022, max_value=2030, value = 2022) # Getting the input.
-if score == "Select Year":
-  df = ""
-else:
-    df[df['Year'] <= score] # Filtering the dataframe. 
+  #Year Slider
+  score = st.sidebar.slider('Select Year', min_value=2022, max_value=2030, value = 2022) # Getting the input.
+  df[df['Year'] <= score] # Filtering the dataframe. 
+    
     
 #Meta Select Filter
 country_list = ["Seleccionar Proyecto","Boxboard", "Maderas", "Boxia"]
