@@ -21,8 +21,9 @@ if uploaded_file is not None:
   proyects = df['Proyecto'].unique()
   #st.write(type(proyects))
   df1 = pd.DataFrame({0: ["Todos"]}, index=['3'])
-  st.write(type(df1))
-  proyects.append("Todos")
+  #st.write(type(df1))
+  lista = ["Todos"]
+  proyects.extend(lista)
   years = df['Year'].unique()
   select = st.sidebar.selectbox('Proyect', proyects)
   year = df["Year"].loc[df["Proyecto"] == select].unique()
