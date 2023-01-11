@@ -20,7 +20,7 @@ st.sidebar.title("Select Meta and Year:")
 st.image("https://images.pexels.com/photos/573259/pexels-photo-573259.jpeg?cs=srgb&dl=pexels-matheus-bertelli-573259.jpg&fm=jpg", caption="World Happiness Dataset")
 uploaded_file = st.file_uploader("Seleccionar archivo")
 #proyect_list = ["Seleccionar Proyecto","Boxboard", "Maderas", "Boxia"]
-proyects = df['Proyecto'].unique()
+
 if uploaded_file is not None:
   df = pd.read_csv(uploaded_file)
   #st.write(df)
@@ -29,6 +29,7 @@ if uploaded_file is not None:
   df[df['Year'] == score] # Filtering the dataframe.
   
   #select = st.sidebar.selectbox('Filter Proyect here:', proyect_list, key='1') 
+  proyects = df['Proyecto'].unique()
   select = st.selectbox('Proyect', proyects)
   df[df['Proyecto'] == select]
 
