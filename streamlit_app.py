@@ -35,7 +35,7 @@ if uploaded_file is not None:
   years = df['Year'].unique()
   select = st.selectbox('Proyect', proyects)
   year = df["Year"].loc[df["Proyecto"] == select]
-  year_choice = st.sidebar.selectbox('', years)
+  year_choice = st.sidebar.selectbox('', year)
   #df['Year'] == score # Filtering the dataframe.
   df['Year'] == year_choice
   
