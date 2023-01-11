@@ -28,6 +28,7 @@ if uploaded_file is not None:
   country_list = ["Seleccionar Proyecto","Boxboard", "Maderas", "Boxia"]
   select = st.sidebar.selectbox('Filter Meta here:', country_list, key='1')  
   df[df['Pryecto']==select]
+else: ""
   
     
 '''#Meta Select Filter
