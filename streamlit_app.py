@@ -26,12 +26,12 @@ if uploaded_file is not None:
   #st.write(df)
   #Year Slider
   score = st.sidebar.slider('Select Year', min_value=2022, max_value=2030, value = 2022) # Getting the input.
-  df[df['Year'] == score] # Filtering the dataframe.
+  #df[df['Year'] == score] # Filtering the dataframe.
   
   #select = st.sidebar.selectbox('Filter Proyect here:', proyect_list, key='1') 
   proyects = df['Proyecto'].unique()
   select = st.selectbox('Proyect', proyects)
-  df[df['Proyecto'] == select]
+  df[df['Proyecto'] == select] & df[df['Year'] == score] # Filtering the dataframe.
 
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
