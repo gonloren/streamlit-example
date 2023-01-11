@@ -27,7 +27,7 @@ if uploaded_file is not None:
   df = pd.read_csv(uploaded_file)
   #st.write(df)
   #Year Slider
-  score = st.sidebar.slider('Select Year', min_value=2022, max_value=2030, value = 2022) # Getting the input.
+  #score = st.sidebar.slider('Select Year', min_value=2022, max_value=2030, value = 2022) # Getting the input.
   #df[df['Year'] == score] # Filtering the dataframe.
   
   #select = st.sidebar.selectbox('Filter Proyect here:', proyect_list, key='1') 
@@ -35,7 +35,7 @@ if uploaded_file is not None:
   years = df['Year'].unique()
   select = st.selectbox('Proyect', proyects)
   year = df["Year"].loc[df["Proyecto"] == select]
-  year_choice = st.sidebar.selectbox('', year)
+  year_choice = st.sidebar.selectbox('', years)
   #df['Year'] == score # Filtering the dataframe.
   year['Year'] == year_choice
   
