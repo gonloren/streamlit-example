@@ -25,8 +25,11 @@ if uploaded_file is not None:
 
 #Year Slider
 score = st.sidebar.slider('Select Year', min_value=2022, max_value=2030, value = 2022) # Getting the input.
-df = df[df['Year'] <= score] # Filtering the dataframe.
-                                 
+if score == "Select Year":
+  df = ""
+else:
+    df[df['Year'] <= score] # Filtering the dataframe. 
+    
 #Meta Select Filter
 country_list = ["Seleccionar Proyecto","Boxboard", "Maderas", "Boxia"]
 select = st.sidebar.selectbox('Filter Meta here:', country_list, key='1')
